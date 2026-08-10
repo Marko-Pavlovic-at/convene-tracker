@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pull Tracker</title>
+</head>
+<body>
+    <header>
+        <h1>Pull Tracker</h1>
+    </header>
+
+    <main>
+        <form>
+        <label for="pName">Name</label>
+        <input type="text" name="pName" id="pName">
+        <label for="pDate"></label>
+        <input type="date" name="pDate" id="pDate">
+
+        <select name="rarity" id="rarity">
+            <option value="">Choose Rarity</option>
+            <option value="3*">3*</option>
+            <option value="4*">4*</option>
+            <option value="5*">5*</option>
+        </select>
+        <input id="pullBtn" type="submit" value="Log Pull">
+
+        </form>
+    </main>
+
+    <script src="pulls.js"></script>
+</body>
+</html>

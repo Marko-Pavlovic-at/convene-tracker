@@ -1,0 +1,48 @@
+:root{
+    --bg-darkest: #0a0e12;
+    --bg-dark:      #121820;
+    --bg-surface: #1c242e;
+
+
+    --text: #f5f3ec;
+    --text-muted: #a8a49a;
+    --text-dim: #6f6c64;
+
+    --rarity-5: #f0a63c;      /* 5★ gold */
+    --rarity-4: #b56cff;      /* 4★ purple */
+    --rarity-3: #4aa3e8;      /* 3★ blue */
+
+    --gold: #e8c96a;
+
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-darkest);
+    color: var(--text);
+}
+
+input{
+    background-color: var(--bg-dark);
+    color: var(--text);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+select{
+    background-color: var(--bg-dark);
+    color: var(--text);
+}
+
+#pullBtn{
+    background-color: var(--gold);
+    color: var(--text-dim);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 1rem;
+}

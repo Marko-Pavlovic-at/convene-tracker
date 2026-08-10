@@ -16,7 +16,9 @@ New concept in this project: the browser can persist strings for you, and your
 array is not a string.
 
 Steps:
-- (yours — write them here like you did for teambuilder)
+- html structure css basic styling conncect js and css with html DONE
+- write the form in html name date rarity and submit DONE
+- grab dom elements
 
 Theme:
 Wuthering Waves convene tracker
