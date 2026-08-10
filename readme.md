@@ -19,7 +19,8 @@ Steps:
 - html structure css basic styling conncect js and css with html DONE
 - write the form in html name date rarity and submit DONE
 - grab dom elements DONE
-- on submit push elements in array and console log it
+- on submit push elements in array and console log it DONE
+- after log pull button make it so a log is showed
 
 Theme:
 Wuthering Waves convene tracker
