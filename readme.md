@@ -18,7 +18,8 @@ array is not a string.
 Steps:
 - html structure css basic styling conncect js and css with html DONE
 - write the form in html name date rarity and submit DONE
-- grab dom elements
+- grab dom elements DONE
+- on submit push elements in array and console log it
 
 Theme:
 Wuthering Waves convene tracker
