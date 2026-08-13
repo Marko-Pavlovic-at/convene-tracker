@@ -15,7 +15,9 @@ pullBtn.addEventListener("click", function(e){
 
     })
     renderLogs();
-    console.log(pulls)
+    pName.value = "";
+    pDate.value = "";
+    rarity.value = "";
 })
 
 function renderLogs(){

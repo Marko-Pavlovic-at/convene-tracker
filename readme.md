@@ -20,7 +20,8 @@ Steps:
 - write the form in html name date rarity and submit DONE
 - grab dom elements DONE
 - on submit push elements in array and console log it DONE
-- after log pull button make it so a log is showed
+- after log pull button make it so a log is showed DONE
+- clear input fields after submit DONE
 
 Theme:
 Wuthering Waves convene tracker
