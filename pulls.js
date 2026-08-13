@@ -4,7 +4,10 @@ const rarity = document.querySelector("#rarity")
 const pullBtn = document.querySelector("#pullBtn")
 const log = document.querySelector("#log")
 let pulls = [];
-
+const data = localStorage.getItem("pull");
+if(data){
+    pulls = JSON.parse(data);
+}
 
 pullBtn.addEventListener("click", function(e){
     e.preventDefault();
@@ -15,6 +18,7 @@ pullBtn.addEventListener("click", function(e){
 
     })
     renderLogs();
+    localStorage.setItem("pull", JSON.stringify(pulls));
     pName.value = "";
     pDate.value = "";
     rarity.value = "";
@@ -35,7 +39,7 @@ function renderLogs(){
         const logRarity = document.createElement("p");
         logRarity.textContent = `Rarity : ${item.rarity}`
         logDisplay.append(logRarity);
-        
+       
     })
 }
 
