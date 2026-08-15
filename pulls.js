@@ -45,6 +45,10 @@ function renderLogs(){
         delBtn.className = "delBtn";
         delBtn.textContent = "Delete";
         logDisplay.append(delBtn);
+        const editBtn = document.createElement("button");
+        editBtn.className = "editBtn";
+        editBtn.textContent = "edit";
+        logDisplay.append(editBtn);
 
         delBtn.addEventListener("click", function(){
             console.log("clicked");

@@ -23,7 +23,8 @@ Steps:
 - after log pull button make it so a log is showed DONE
 - clear input fields after submit DONE
 - local storage DONE
-- add a delete button and make it work
+- add a delete button and make it work DONE
+- inline editing
 
 
 Theme:
