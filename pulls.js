@@ -16,8 +16,8 @@ if(data){
 }
 
 nameFilterBtn.addEventListener("click", function(){
-    pulls.sort((a,b) => a.pName.localeCompare(b.pName));
-    renderLogs(pulls);
+    const sorted = [...pulls].sort((a,b) => a.pName.localeCompare(b.pName));
+    renderLogs(sorted);
 })
 
 
@@ -26,7 +26,9 @@ nameFilterBtn.addEventListener("click", function(){
 pullBtn.addEventListener("click", function(e){
     e.preventDefault();
     pulls.push(
-        {pName : pName.value,
+        {
+        id: Date.now(),
+        pName : pName.value,
         pDate : pDate.value,
         rarity: rarity.value,
 
@@ -40,7 +42,7 @@ pullBtn.addEventListener("click", function(e){
 
 function renderLogs(list){
     log.innerHTML = ""
-    pulls.forEach((item, index) =>{
+    list.forEach((item) =>{
         const logDisplay = document.createElement("div");
         logDisplay.className = "logDisplay"
         log.append(logDisplay);
@@ -64,7 +66,7 @@ function renderLogs(list){
 
         delBtn.addEventListener("click", function(){
             console.log("clicked");
-            pulls = pulls.filter((pull, i) => i !== index);
+            pulls = pulls.filter(pull => pull.id != item.id);
             localStorage.setItem("pull", JSON.stringify(pulls));
             renderLogs(pulls);
         })
@@ -89,17 +91,19 @@ function renderLogs(list){
 
             saveBtn.addEventListener("click", function(){
                 logDisplay.innerHTML = "";
-                pulls = pulls.map((pull, i)=>{
-                    if(i === index){
+                pulls = pulls.map(pull => {
+                    if(pull.id === item.id){
                         return {
+                            id: pull.id,
                             pName : modalName.value,
                             pDate : modalDate.value,
                             rarity : modalSelect.value
                         };
+                        
                     }
                     return pull
-
-                });
+                })
+    
                 localStorage.setItem("pull", JSON.stringify(pulls))
                 renderLogs(pulls);
             })
