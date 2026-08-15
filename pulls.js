@@ -42,6 +42,7 @@ function renderLogs(){
         logRarity.textContent = `Rarity : ${item.rarity}`
         logDisplay.append(logRarity);
         const delBtn = document.createElement("button");
+        delBtn.className = "delBtn";
         delBtn.textContent = "Delete";
         logDisplay.append(delBtn);
 
