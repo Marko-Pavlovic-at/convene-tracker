@@ -49,3 +49,10 @@ apperantly i put it inside the foreach last time looked at old code but i dont u
 - remove item from local storage
 problem is removeitem takes key which is my whole array i need to target only one item in the array i use the same set item command i used in the add button.
 - style button
+
+### inline edit:
+
+- give each pull an edit button just like with delete button
+- when button is clicked replace current pull with an input modal
+- modal has same name date and rarity fields like the main input form and a save button
+- clicking save changes the array into the new values

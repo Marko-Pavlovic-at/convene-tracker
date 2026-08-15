@@ -74,6 +74,23 @@ function renderLogs(){
             saveBtn.textContent = "Save";
             saveBtn.className = "saveBtn";
             logDisplay.append(saveBtn);
+
+            saveBtn.addEventListener("click", function(){
+                logDisplay.innerHTML = "";
+                pulls = pulls.map((pull, i)=>{
+                    if(i === index){
+                        return {
+                            pName : modalName.value,
+                            pDate : modalDate.value,
+                            rarity : modalSelect.value
+                        };
+                    }
+                    return pull
+
+                });
+                localStorage.setItem("pull", JSON.stringify(pulls))
+                renderLogs();
+            })
         })
        
     })
