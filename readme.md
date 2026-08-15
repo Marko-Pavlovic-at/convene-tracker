@@ -24,7 +24,9 @@ Steps:
 - clear input fields after submit DONE
 - local storage DONE
 - add a delete button and make it work DONE
-- inline editing
+- inline editing DONE
+- build filters 
+
 
 
 Theme:
@@ -56,3 +58,7 @@ problem is removeitem takes key which is my whole array i need to target only on
 - when button is clicked replace current pull with an input modal
 - modal has same name date and rarity fields like the main input form and a save button
 - clicking save changes the array into the new values
+
+### filters
+
+make 4 filter buttons one for none one for by name one by date one by rarity

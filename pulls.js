@@ -3,11 +3,23 @@ const pDate = document.querySelector("#pDate")
 const rarity = document.querySelector("#rarity")
 const pullBtn = document.querySelector("#pullBtn")
 const log = document.querySelector("#log")
+const nameFilterBtn = document.querySelector("#nameFilterBtn");
+const dateFilterBtn = document.querySelector("#dateFilterBtn")
+const rarityFilterBtn = document.querySelector("#rarityFilterBtn");
+
+
+
 let pulls = [];
 const data = localStorage.getItem("pull");
 if(data){
     pulls = JSON.parse(data);
 }
+
+nameFilterBtn.addEventListener("click", function(){
+    pulls.sort((a,b) => a.pName.localeCompare(b.pName));
+    renderLogs();
+})
+
 
 
 
