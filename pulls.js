@@ -17,7 +17,7 @@ if(data){
 
 nameFilterBtn.addEventListener("click", function(){
     pulls.sort((a,b) => a.pName.localeCompare(b.pName));
-    renderLogs();
+    renderLogs(pulls);
 })
 
 
@@ -31,14 +31,14 @@ pullBtn.addEventListener("click", function(e){
         rarity: rarity.value,
 
     })
-    renderLogs();
+    renderLogs(pulls);
     localStorage.setItem("pull", JSON.stringify(pulls));
     pName.value = "";
     pDate.value = "";
     rarity.value = "";
 })
 
-function renderLogs(){
+function renderLogs(list){
     log.innerHTML = ""
     pulls.forEach((item, index) =>{
         const logDisplay = document.createElement("div");
@@ -66,7 +66,7 @@ function renderLogs(){
             console.log("clicked");
             pulls = pulls.filter((pull, i) => i !== index);
             localStorage.setItem("pull", JSON.stringify(pulls));
-            renderLogs();
+            renderLogs(pulls);
         })
 
         editBtn.addEventListener("click", function(){
@@ -101,7 +101,7 @@ function renderLogs(){
 
                 });
                 localStorage.setItem("pull", JSON.stringify(pulls))
-                renderLogs();
+                renderLogs(pulls);
             })
         })
        
@@ -112,4 +112,4 @@ function renderLogs(){
 
 }
 
-renderLogs();
+renderLogs(pulls);
