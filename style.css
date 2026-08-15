@@ -89,3 +89,14 @@ main{
     height: 2rem;
     align-self: center;
 }
+
+.saveBtn{
+        background-color: var(--rarity-3);
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    width: 5rem;
+    height: 2rem;
+    align-self: center;
+}

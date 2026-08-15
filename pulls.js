@@ -56,8 +56,28 @@ function renderLogs(){
             localStorage.setItem("pull", JSON.stringify(pulls));
             renderLogs();
         })
+
+        editBtn.addEventListener("click", function(){
+            logDisplay.innerHTML = "";
+            const modalName = document.createElement("input");
+            modalName.placeholder = "Name";
+            logDisplay.append(modalName);
+            const modalDate = document.createElement("input");
+            modalDate.type = "date";
+            logDisplay.append(modalDate);
+            const modalSelect = document.createElement("select");
+            ["3*", "4*", "5*"].forEach(text => {
+                modalSelect.add(new Option(text, text))
+            });
+            logDisplay.append(modalSelect);
+            const saveBtn = document.createElement("button");
+            saveBtn.textContent = "Save";
+            saveBtn.className = "saveBtn";
+            logDisplay.append(saveBtn);
+        })
        
     })
+
 
     
 
