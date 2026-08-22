@@ -61,4 +61,5 @@ problem is removeitem takes key which is my whole array i need to target only on
 
 ### filters
 
-make 4 filter buttons one for none one for by name one by date one by rarity
+- make 4 filter buttons one for none one for by name one by date one by rarity
+- style

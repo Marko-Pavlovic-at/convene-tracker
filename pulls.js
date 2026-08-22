@@ -6,7 +6,8 @@ const log = document.querySelector("#log")
 const nameFilterBtn = document.querySelector("#nameFilterBtn");
 const dateFilterBtn = document.querySelector("#dateFilterBtn")
 const rarityFilterBtn = document.querySelector("#rarityFilterBtn");
-
+const pity = document.querySelector("#pity");
+const clearBtn = document.querySelector("#clearBtn");
 
 
 let pulls = [];
@@ -15,16 +16,39 @@ if(data){
     pulls = JSON.parse(data);
 }
 
+clearBtn.addEventListener("click", function(){
+    if(confirm("Delete all pulls?")){
+        pulls = []
+        localStorage.removeItem("pull");
+        renderLogs(pulls);
+    }
+})
+
 nameFilterBtn.addEventListener("click", function(){
     const sorted = [...pulls].sort((a,b) => a.pName.localeCompare(b.pName));
     renderLogs(sorted);
 })
 
 
+dateFilterBtn.addEventListener("click", function(){
+    const sorted = [...pulls].sort((a,b) =>
+        a.pDate.localeCompare(b.pDate))
+    renderLogs(sorted);
 
+})
+
+rarityFilterBtn.addEventListener("click", function(){
+    const sorted = [...pulls].sort((a,b) =>
+    b.rarity.localeCompare(a.rarity));
+    renderLogs(sorted);
+})
 
 pullBtn.addEventListener("click", function(e){
     e.preventDefault();
+    if(pName.value.trim() === "" || pDate.value === "" || rarity.value ===""){
+        alert("Fill  in evvery field");
+        return;
+    }
     pulls.push(
         {
         id: Date.now(),
@@ -42,6 +66,8 @@ pullBtn.addEventListener("click", function(e){
 
 function renderLogs(list){
     log.innerHTML = ""
+    const lastFive = pulls.findLastIndex(pull => pull.rarity === "5*")
+    pity.textContent = `Pity : ${pulls.length - 1 -lastFive}`
     list.forEach((item) =>{
         const logDisplay = document.createElement("div");
         logDisplay.className = "logDisplay"
